@@ -8,10 +8,13 @@ Downloads data in different formats from different places and outputs a standard
 
 ### run
 
-#### with docker-compose
+#### with docker
+
+*Note:* Outputed file will be *inside* the container. Container exposes a `/output/` volume, which serves as a default directory for output file.
 
 ```bash
-$ docker-compose up
+$ docker build -t sds .
+$ docker run -it sds [-o OUTPUT_FILE] <url> [url...]
 ```
 
 #### manually
@@ -22,5 +25,5 @@ $ docker-compose up
 
 ```bash
 $ python setup.py install
-$ sds
+$ sds [-o OUTPUT_FILE] <url> [url...]
 ```

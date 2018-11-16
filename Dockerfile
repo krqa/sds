@@ -5,4 +5,9 @@ COPY . /home/
 WORKDIR /home/
 RUN python setup.py install
 
-CMD ["sds"]
+RUN mkdir /output/
+WORKDIR /output/
+
+VOLUME ["/output/"]
+
+ENTRYPOINT ["sds"]
